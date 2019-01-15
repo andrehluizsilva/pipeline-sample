@@ -21,7 +21,7 @@ public class Main {
 
             JsonObject object = Json.parse(rd).asObject();
 
-            Dog dog = new Dog(object.get("status").asInt(), object.get("message").asString());
+            Dog dog = new Dog(object.get("status").asString(), object.get("message").asString());
 
             System.out.println("Dog:" + dog.getMessage());
 

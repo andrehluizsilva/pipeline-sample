@@ -28,8 +28,7 @@ public class DogsTest {
         try {
             BufferedReader rd = client.GetDog();
             JsonObject object = Json.parse(rd).asObject();
-            Dog dog = new Dog(object.get("status").asInt(), object.get("message").asString());
-            assertTrue(dog.getMessage().contains(".jpg"));
+            assertTrue(object.get("message").asString().contains(".jpg"));
 
         } catch (IOException e) {
             e.printStackTrace();
